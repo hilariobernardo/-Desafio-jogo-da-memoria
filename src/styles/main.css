@@ -47,6 +47,7 @@ h2 {
     gap: 10px;
     transform-style: preserve-3d;
     perspective: 500px;
+    justify-content: center;
 
 }
 
