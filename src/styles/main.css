@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Micro+5&family=Press+Start+2P&family=Raleway:ital,wght@0,100..900;1,100..900&family=Sixtyfour+Convergence&display=swap');
+
+body {
+    font-family: "Sixtyfour Convergence", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #1e1e29;
+}
+
+h2 {
+    font-size: 3em;
+    color: #fff;
+    text-transform: lowercase;
+    letter-spacing: 0.1em;
+}
+
+.container {
+    font-family: "Sixtyfour Convergence", sans-serif;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 25px;
+    background: rgba(0, 0, 0, 0.33);
+
+}
+
+.reset {
+    padding: 20px 25px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.reset:focus {
+    background-color: #727272;
+}
+
+.game {
+    width: 430px;
+    height: 430px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    transform-style: preserve-3d;
+    perspective: 500px;
+
+}
+
+.item {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    padding: 20px;
+    font-size: 3em;
+
+    transform: rotateY(180deg);
+    transition: 0.25s;
+    user-select: none;
+
+}
+.item::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #727272;
+    transition: 0.25;
+    transform: rotateY(0deg);
+    backface-visibility: hidden;
+}
+.item.boxOpen{
+    transform: rotateY(0deg);
+    transition: 0.25;
+
+}
+.boxOpen::after,
+.boxMatch::after{
+    transform: rotateY(180deg);
+}
